@@ -2,9 +2,11 @@
   hosts: local
   connection: local
   vars: 
-    COURSE: Devops
-    DURATION: 2 hrs
-    TRAINER: Sunil
+    COURSE1: Devops
+    DURATION2: 2 hrs
+    TRAINER3: Sunil
+  vars_files: 
+  - course.yaml
 
   tasks:
   - name: print course information
