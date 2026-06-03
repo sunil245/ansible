@@ -1,0 +1,22 @@
+- name: ansible data type
+  hosts: local
+  connection: local
+  vars:
+    NUMBER: 29
+    DURATION: 120hrs
+    COURSE: Devopsss
+    IS_LIVE: true
+    TOOLS:  #List
+    - Linux
+    - shell
+    - ansible
+    CONCEPTS:  #map or dictionary
+      CI: Jenkins
+      SCRIPTING: "Dont, How"
+  
+  tasks:
+  - name: print course information
+    ansible.builtin.debug:
+      msg: "Course is {{ COURSE }}, duration is {{ DURATION }}, is live?: {{ IS_LIVE }} 
+      Tools are {{ TOOLS }} and cocepts are {{ CONCEPTS}}"
+    when: NUMBER < 100
