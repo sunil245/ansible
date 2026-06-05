@@ -1,0 +1,19 @@
+- name: shell vs command
+  hosts: frontend
+  become: true
+  tasks:
+  - name: shell command
+    ansible.builtin.shell: "ls -ltr >> /tmp/output11.txt"
+    register: command_result
+
+  - name: print out command_result
+    ansible.builtin.debug:
+      msg: "{{ command_result }}"
+
+  - name: command line
+    ansible.builtin.command: "ls -ltr"
+    register: command_result
+
+  - name: print out command_result
+    ansible.builtin.debug:
+      msg: "{{ command_result }}"
